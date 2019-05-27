@@ -1,0 +1,55 @@
+<div class="main-inner">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '25px',backdropBackgroundColour: 'rgba(0,0,0,0.5)',fullScreenBackdrop:true, primaryColour: '#590a66', secondaryColour: '#590a66',tertiaryColour: '#590a66'}"></ngx-loading>
+    <div class="container" style="padding-top:100px;">
+        <div class="page-title">
+            <h2>Kart Details</h2>
+        </div>
+        <div class="row">
+            <div class="admin-box no-padding">
+                <table class="table small-header">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Date</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let x of productDetails;let i=index">
+                            <td class="min-width">
+                                <input type="checkbox" [(ngModel)]="deviceChecked">
+                            </td>
+                            <td class="min-width">
+                                <div class="user-avatar">
+                                    <img src="assets/img/tmp/profile-1.jpg" alt="See H. Oceguera">
+                                </div>
+                            </td>
+                            <td>{{x.price}}</td>
+                            <td>12:08 12/08/2016</td>
+                            <td class="min-width">
+                                <button (click)="RemoveFromKart(x.productId);" class="btn btn-primary">
+                                    Remove</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row center" style="padding-top:50px;">
+            <div class="col-md-2">
+                <button class="btn btn-lg btn-primary" (click)="MakePayment(productDetails);">
+                    Make Payment</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-lg btn-primary" (click)="ContinueShopping();">
+                    Continue Shopping</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

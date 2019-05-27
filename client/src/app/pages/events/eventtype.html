@@ -1,0 +1,28 @@
+<div *ngFor="let x of eventList;let i=index;">
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+        <div class="card">
+            <div class="card-image small no-line" [ngStyle]="{'background-image':x.url.changingThisBreaksApplicationSecurity}">
+                <a [routerLink]="['/products',x.Id]" href="#"></a>
+                <!--<div class="card-image-icon">
+                    <i class="md-icon">{{x.EventNames}}</i>
+                </div>-->
+                <!-- <div class="card-image-icon">
+                    <i class="md-icon">restaurant_menu</i>
+                </div> -->
+                <div class="card-image-count">
+                    <strong>12</strong>
+                    <span>items</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <h2>
+                    <a [routerLink]="['/products',x.Id]" href="#">{{x.EventNames}}</a>
+                    <a href="#" class="btn btn-transparent">Show All</a>
+                </h2>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

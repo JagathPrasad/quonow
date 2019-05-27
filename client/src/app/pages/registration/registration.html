@@ -1,0 +1,50 @@
+<div class="main-inner">
+	<div class="container">
+		<form (ngSubmit)="Registration(user);" #heroForm="ngForm" style="Padding-top:60px;padding-bottom:40px;">
+			<div class="row">
+				<div class="col-lg-5 col-lg-offset-4 shadowBox">
+					<h2>Create a QuoNow account</h2>
+					<div class="form-group">
+						<label for="">Username</label>
+						<input type="text" class="form-control" [(ngModel)]="user.Name" name="Name" #name='ngModel'>
+					</div>
+					<div class="form-group">
+						<label for="">E-mail</label>
+						<input type="mail" class="form-control" [(ngModel)]="user.Email" name="Email" #email='ngModel'>
+					</div>
+					<div class="form-group">
+						<label for="">Password</label>
+						<input type="password" class="form-control" [(ngModel)]="user.Password" name="Password" #password='ngModel'>
+					</div>
+					<div class="form-group" style="display:none;">
+						<input type="text" class="form-control" [(ngModel)]="user.UserTypeId" name="UserTypeId" />
+					</div>
+					<div class="center">
+						<div class="checkbox form-group">
+							<label>
+								<input type="checkbox"> By signing up, you agree with the
+								<a [routerLink]="['/terms']">
+									<span class="text-warning">Terms & Conditions</span>
+								</a>
+							</label>
+						</div>
+						<div class="form-group form-group-btn">
+							<button type="submit" class="btn btn-lg btn-primary">Create Account &nbsp;
+								<i class="fa fa-chevron-right"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107719391-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-107719391-1');
+</script>

@@ -1,0 +1,189 @@
+<div class="main-inner">
+
+	<div class="hero" style="margin:0 0 10px 0 !important;height: 92px !important;box-shadow:0 0 0">
+		<div class="hero-form ">
+			<div class="container">
+				<div>
+					<div class="input-group first col-sm-12 col-md-4">
+						<div class="input-group-addon">
+							<i class="md-icon">my_location</i>
+						</div>
+						<input type="text" class="form-control" placeholder="Type your location">
+					</div>
+					<div class="input-group col-sm-12 col-md-6">
+						<div class="input-group-addon">
+							<i class="md-icon">search</i>
+						</div>
+						<input type="text" class="form-control" placeholder="Search for spot, event or a restaurant" #searchText>
+					</div>
+
+					<div class="form-group last col-sm-12 col-md-2">
+						<button class="btn btn-primary btn-block" (click)="SearchProducts(searchText.value)"> Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="content">
+		<div class="hero" style="background-image: url('assets/img/tmp/hero.jpg'); ">
+			<div class="hero-content">
+				<div class="container">
+					<h1>Create Something Brilliant</h1>
+
+					<p>
+						With the QuoNow template you can create awesome directory listings websites. Dozens of well prepared layouts and
+						elements
+						will help you.
+					</p>
+				</div>
+			</div>
+			<div class="hero-layer"></div>
+		</div>
+		<div class="push-bottom">
+			<div class="container">
+				<div class="page-title background-white">
+					<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '25px',backdropBackgroundColour: 'rgba(0,0,0,0.5)',fullScreenBackdrop:true, primaryColour: '#590a66', secondaryColour: '#590a66',tertiaryColour: '#590a66'}"></ngx-loading>
+					<h2>Tickets</h2>
+					<p>Best pub and events in your city hand picked by QuoNow stuff</p>
+				</div>
+				<div class="row">
+					<div *ngFor="let x of pubDetails;let i=index;" class="col-md-3">
+						<div class="card">
+							<div class="card-image" [ngStyle]="{'background-image':x.url.changingThisBreaksApplicationSecurity}">
+								<a [routerLink]="['/ticket',x.Id]"></a>
+							</div>
+							<div class="card-content">
+								<h3>
+									<a [routerLink]="['/ticket',x.Id]">{{x.Name}}</a>
+								</h3>
+								<h2>
+									<a [routerLink]="['/ticket',x.Id]">{{x.Name}}</a>
+								</h2>
+							</div>
+							<div class="card-actions">
+								<!-- <a href="#" class="card-action-icon">
+									<i class="md-icon">insert_comment</i>
+									<span>{{x.Time}}</span>
+								</a> -->
+								<!-- <a href="#" class="card-action-icon">
+									<i class="md-icon">access_time</i>
+									<span>{{x.Date | date:'medium'}}</span>
+								</a> -->
+								<a [routerLink]="['/ticket',x.Id]" class="card-action-btn btn btn-transparent">Read More</a>
+								<br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="push-bottom">
+			<div class="image-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="image-description-wrapper col-md-12 col-lg-7">
+							<div class="image-description">
+								<h2>QuoNow is advanced
+									<strong>directory &amp; listing</strong> developer toolkit</h2>
+
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="image-description-box">
+											<h3>
+												<i class="md-icon">laptop</i> Responsive</h3>
+
+											<p>
+												Maecenas augue magna, mollis a dictum id, ornare ac turpis. Morbi vel faucibus ligula.
+											</p>
+										</div>
+
+									</div>
+									<div class="col-sm-6">
+										<div class="image-description-box">
+											<h3>
+												<i class="md-icon">layers</i> Elements</h3>
+
+											<p>
+												Maecenas augue magna, mollis a dictum id, ornare ac turpis. Morbi vel faucibus ligula.
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="image-description-box">
+											<h3>
+												<i class="md-icon">gps_fixed</i> Geolocation</h3>
+
+											<p>
+												Maecenas augue magna, mollis a dictum id, ornare ac turpis. Morbi vel faucibus ligula.
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="image-description-box">
+											<h3>
+												<i class="md-icon">pie_chart_outlined</i> Charting</h3>
+
+											<p>
+												Maecenas augue magna, mollis a dictum id, ornare ac turpis. Morbi vel faucibus ligula.
+											</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="image-holder col-lg-5 col-lg-offset-7 hidden-md-down"></div>
+			</div>
+		</div> -->
+
+
+		<div class="container">
+			<div class="page-title">
+				<h2>Events</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-xl-12">
+					<div class="cards-wrapper">
+						<div class="row">
+							<producttypes></producttypes>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="cta">
+			<div class="container">
+				<h2>Newsletter Subscription</h2>
+
+				<p>
+					Enter your e-mail and subscribe to our newsletter.
+				</p>
+				<div class="col-md-3"></div>
+				<div class="col-md-4">
+					<input type="text" #email class="form-control col-md-5 col-md-offset-4" />
+					<br />
+					<br />
+					<br />
+					<a (click)="Subscription(email.value);" class="btn btn-primary">Subscribe</a>
+				</div>
+				<div class="col-md-4"></div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107719391-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-107719391-1');
+	</script>

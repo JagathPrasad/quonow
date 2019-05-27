@@ -1,0 +1,50 @@
+<div class="container push-top-bottom">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '25px',backdropBackgroundColour: 'rgba(0,0,0,0.5)',fullScreenBackdrop:true, primaryColour: '#590a66', secondaryColour: '#590a66',tertiaryColour: '#590a66'}"></ngx-loading>
+    <form (ngSubmit)="Purchase(payment);" #paymentForm="ngForm">
+
+        <div class="row">
+            <div class="col-md-5 col-md-offset-3 shadowBox">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" required [(ngModel)]="payment.Name" name="Name">
+                </div>
+
+                <div class="form-group">
+                    <label>Card No</label>
+                    <input type="text" class="form-control" required maxlength="16" [(ngModel)]="payment.Number" name="CardNo">
+                </div>
+
+                <div class="form-group">
+                    <label>CVV</label>
+                    <input type="text" class="form-control" required maxlength="3" [(ngModel)]="payment.Cvv" name="Cvv">
+                </div>
+
+
+                <div class="form-group">
+                    <label>Expiration Month</label>
+                    <input type="text" class="form-control" maxlength="2" required [(ngModel)]="payment.ExpirationMonth" name="ExpirationMonth">
+                </div>
+
+
+                <div class="form-group">
+                    <label>Expiration Year</label>
+                    <input type="text" class="form-control" maxlength="4" required [(ngModel)]="payment.ExpirationYear" name="ExpirationYear">
+                </div>
+
+                <div class="form-group">
+
+                    <button class="btn btn-primary btn-lg pull-right" type="submit" [disabled]="!paymentForm.form.valid">Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+
+
+
+
+
+</div>

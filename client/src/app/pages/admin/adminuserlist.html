@@ -1,0 +1,36 @@
+
+
+<div class="admin-box">
+    <table class="table small-header">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>EMail</th>
+                <th>Last Access</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let x of userList;let i=index">
+                <td class="min-width"><input type="checkbox"></td>
+                <td class="min-width">
+                    <div class="user-avatar">
+                        <img src="assets/img/tmp/profile-1.jpg" alt="See H. Oceguera">
+                    </div>
+                    <!-- /.user-avatar -->
+                </td>
+                <td>{{x.Name}}</td>
+                <td>{{x.Email}}</td>
+                <td>12:08 12/08/2016</td>
+                <td class="min-width">
+                    <a href="#" class="btn btn-secondary"><i class="md-icon">delete</i> Delete</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <!-- /.table -->
+</div>

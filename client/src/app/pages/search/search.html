@@ -1,0 +1,31 @@
+<div class="container">
+    <!--<p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>-->
+    <div class="row" *ngFor="let x of productList;let i=index;">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+            <a href="#">
+            <img src="assets/img/tmp/card-2.jpg" class="img-responsive img-box img-thumbnail"> 
+        </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="list-group">
+                <div class="list-group-item">
+                </div>
+            </div>
+            <h4><a href="#">{{x.productName}}</a></h4>
+            <p>Naturally, we know where Bali's newest restaurants are and what to order, so give that private chef a rest and
+                check out these spanking new haunts.</p>
+            <div class="">
+                <i class="md-icon">star</i>
+                <i class="md-icon">star</i>
+                <i class="md-icon">star</i>
+                <i class="md-icon">star</i>
+                <i class="md-icon">star</i>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+            <h3><a href="#">${{x.price}}</a></h3><br><br>
+              <button class="btn btn-lg btn-primary" (click)="MakePayment(x.Id);"><i class="md-icon" >remove_red_eye</i> Buy</button>
+        </div>
+        <hr>
+    </div>
+</div>

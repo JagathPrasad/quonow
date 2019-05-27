@@ -1,0 +1,67 @@
+<div class="admin-box no-padding">
+    <div class="filter filter-white">
+        <div class="row">
+            <!--<div class="col-md-3">
+                <div class="form-group">
+                    <select class="form-control">
+				<option>New York</option>
+				<option>Washington</option>
+			</select>
+                </div>
+            </div>-->
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="namekey" class="form-control" placeholder="Keyword">
+                </div>
+            </div>
+            <!--<div class="col-md-7">
+                <div class="form-group">
+                    <p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
+                </div>
+            </div>-->
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="fitlerprice" placeholder="Price">
+                </div>
+            </div>
+            <!--<div class="col-md-2">
+                <div class="form-group-btn form-group-btn-placeholder-gap">
+                    <button type="submit" class="btn btn-primary btn-block">Filter</button>
+                </div>
+            </div>-->
+        </div>
+    </div>
+
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '25px',backdropBackgroundColour: 'rgba(0,0,0,0.5)',fullScreenBackdrop:true, primaryColour: '#590a66', secondaryColour: '#590a66',tertiaryColour: '#590a66'}"></ngx-loading>
+<div class="row" *ngFor="let x of productDetails | testone:fitlerprice | namefilter:namekey;let i=index;">
+    <div class="col-xs-12 col-sm-3 col-md-3">
+        <a href="#">
+            <!-- <img src="assets/img/tmp/card-2.jpg" class="img-responsive img-box img-thumbnail">  -->
+            <div class="card-image" [ngStyle]="{'background-image':x.url.changingThisBreaksApplicationSecurity}"></div>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="list-group">
+            <div class="list-group-item">
+                <!--{{x.Price}}-->
+            </div>
+        </div>
+        <h4><a href="#">{{x.ProductName}}</a></h4>
+        <p>Naturally, we know where Bali's newest restaurants are and what to order, so give that private chef a rest and check
+            out these spanking new haunts.</p>
+        <!--<star></star>-->
+        <div class="">
+            <i class="md-icon">star</i>
+            <i class="md-icon">star</i>
+            <i class="md-icon">star</i>
+            <i class="md-icon">star</i>
+            <i class="md-icon">star</i>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3">
+        <h3><a href="#"> र {{x.Price}}</a></h3><br><br>
+        <button class="btn btn-lg btn-primary" (click)="MakePayment(x.Id);"><i class="md-icon" >remove_red_eye</i> Buy</button>
+    </div>
+    <hr>
+</div>

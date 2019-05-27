@@ -1,0 +1,76 @@
+<div class="admin-wrapper">
+    <div class="container-fluid" style="padding-top:20px;">
+    </div>
+    <!-- /.container -->
+    <div class="container-fluid">
+        <div class="col-md-2">
+            <div class="admin-sidebar">
+                <a href="#" class="hidden-md-down">
+                    <img src="assets/img/logo-light.png" alt="" class="admin-sidebar-logo">
+                </a>
+
+                <a [routerLink]="['/admin','add']" class="btn btn-primary btn-block hidden-md-down">Add</a>
+
+                <div class="dashboard-nav-primary collapse navbar-toggleable-md">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="nav-item">
+                            <a [routerLink]="['/admin']" href="#" class="nav-link active"><i class="md-icon">dashboard</i> Dashboard</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a [routerLink]="['/admin', 'approve']" href="#" class="nav-link "><i class="md-icon">view_list</i> Approve <span>3</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a [routerLink]="['/admin', 'list']" href="#" class="nav-link "><i class="md-icon">rate_review</i> Products</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a [routerLink]="['/admin', 'tickets']" href="#" class="nav-link "><i class="md-icon">rate_review</i> Tickets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['/admin','user']" href="#" class="nav-link "><i class="md-icon">people</i> Users <span>1</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="md-icon">power_settings_new</i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr class="hidden-md-down">
+
+                <div class="hidden-md-down">
+                    <h2>Recent Activity</h2>
+
+                    <ul class="recent">
+                        <li><img src="assets/img/tmp/profile-1.jpg" alt=""> category.</li>
+                        <li><img src="assets/img/tmp/profile-2.jpg" alt=""> is asking for the agent role with review provilege.</li>
+                        <li><img src="assets/img/tmp/profile-3.jpg" alt=""> category.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-10">
+            <div class="admin-header-search">
+                <form method="get" action="http://materialist-html.wearecodevision.com/admin-dashboard.html?">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="md-icon">search</i>
+                        </div>
+
+
+                        <input type="text" class="form-control" placeholder="Enter your search keyword ...">
+                    </div>
+
+                </form>
+            </div>
+
+
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+</div>
