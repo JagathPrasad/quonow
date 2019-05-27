@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f839081cac546c0908dc48804d1bc57" Name="Diagram1">
+        <EntityTypeShape EntityType="QUONOWModel.Booking" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Cart" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Category" Width="1.5" PointX="9.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Email" Width="1.5" PointX="7.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Event" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.EventType" Width="1.5" PointX="1.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Payment" Width="1.5" PointX="3.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Product" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.ProductType" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Pub" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Refund" Width="1.5" PointX="10.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.Review" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.User" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.UserLocation" Width="1.5" PointX="9.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUONOWModel.UserType" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="QUONOWModel.FK__Booking__EventId__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Booking__Product__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Booking__PubId__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Booking__UserId__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Refund__BookingI__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Cart__productId__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Cart__userId__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Event__EventType__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__ProductTy__Event__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Product__Product__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Product__UserId__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Reviews__Product__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Refund__UserId__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__Reviews__UserId__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="QUONOWModel.FK__User__UserTypeId__1273C1CD" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
