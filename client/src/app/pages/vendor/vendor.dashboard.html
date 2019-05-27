@@ -1,0 +1,118 @@
+<div class="admin-title">
+    <h1>Welcome back</h1>
+
+    <ul class="breadcrumb">
+        <li><a href="#">QuoNow</a> <i class="md-icon">keyboard_arrow_right</i></li>
+
+        <li class="active">Dashboard</li>
+
+
+
+    </ul>
+</div>
+
+<div class="admin-stats">
+    <div class="row">
+        <div class="col-xs-12 col-lg-6 col-xl-3">
+            <div class="admin-stat lime">
+                <div class="admin-stat-icon">
+                    <i class="md-icon">people</i>
+                </div>
+
+                <div class="admin-stat-content">
+                    <h2>Unique Visits</h2>
+                    <h3>12,291</h3>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-xs-12 col-lg-6 col-xl-3">
+            <div class="admin-stat blue">
+                <div class="admin-stat-icon">
+                    <i class="md-icon">search</i>
+                </div>
+                <div class="admin-stat-content">
+                    <h2>Total Searches</h2>
+                    <h3>1,203</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-6 col-xl-3">
+            <div class="admin-stat purple">
+                <div class="admin-stat-icon">
+                    <i class="md-icon">storage</i>
+                </div>
+                <div class="admin-stat-content">
+                    <h2>Of Listings</h2>
+                    <h3>84,524</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-6 col-xl-3">
+            <div class="admin-stat brown">
+                <div class="admin-stat-icon">
+                    <i class="md-icon">message</i>
+                </div>
+                <div class="admin-stat-content">
+                    <h2>Unread Messages</h2>
+                    <h3>453</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+            <div class="admin-box">
+        <div style="width:500px;height:500px;">
+            <p-chart type="polarArea" [data]="data"></p-chart>
+        </div>
+    </div>
+</div>
+    <div class="col-md-6 col-lg-12 col-xl-5">
+        
+                <div class="admin-box">
+                    UpComing Events
+                    <div class="admin-posts" *ngFor="let x of upComingDetails;let i=index;">
+                        <div class="admin-post">
+                            <div class="admin-post-image">
+                                <a href="#" style="background-image: url('assets/img/tmp/post-1.jpg');"></a>
+                            </div>
+                            <div class="admin-post-title">
+                                <h2><a href="#">{{x.userName}}</a></h2>
+                                <h3>18. June 2016</h3>
+                            </div>
+                            <div class="admin-post-action">
+                                <a href="#">{{x.EventName}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+<br/>
+<div class="row">
+
+    <div class="col-md-12">
+
+        <div class="admin-box">
+            Waiting for Approval
+            <div class="admin-posts" *ngFor="let x of getapprovalDetails;let i=index;">
+                <div class="admin-post">
+                    <div class="admin-post-image">
+                        <a href="#" style="background-image: url('assets/img/tmp/post-1.jpg');"></a>
+                    </div>
+                    <div class="admin-post-title">
+                        <h2><a href="#">{{x.ProductName}}</a></h2>
+                        <h3>18. June 2016</h3>
+                    </div>
+                    <div class="admin-post-action">
+                        <a href="#">Edit Post <i class="md-icon">keyboard_arrow_right</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

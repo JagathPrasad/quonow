@@ -1,0 +1,30 @@
+<div class="admin-box">
+    <table class="table small-header">
+        <thead>
+            <tr>
+                <th class="min-width"></th>
+                <th class="min-width">Image</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let x of productList;let i=index;">
+                <td class="min-width"><input type="checkbox"></td>
+                <td class="min-width"><img src="assets/img/tmp/card-2.jpg" alt="Cozzy Coffee Shop"></td>
+                <td>Cozzy Coffee Shop</td>
+                <td><a href="#">Drink &amp; Food</a></td>
+                <td><a href="#">See H. Oceguera</a></td>
+                <td>
+                    <a href="#" class="btn btn-primary"><i class="md-icon">remove_red_eye</i> View</a>
+                    <a href="#" class="btn btn-primary"><i class="md-icon">check</i> Approve</a>
+                    <a href="#" class="btn btn-secondary"><i class="md-icon">delete</i> Remove</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

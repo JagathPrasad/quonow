@@ -1,0 +1,21 @@
+<div *ngFor="let x of producttypeList;let i = index;">
+	<div class="col-sm-4">
+		<div class="card">
+			<div class="card-image" [ngStyle]="{'background-image':x.url.changingThisBreaksApplicationSecurity}">
+				<a [routerLink]="['/productlist',x.Id]" href="#"></a>
+				<!-- <div class="card-image-icon">
+                    <i class="md-icon">restaurant_menu</i>
+                </div> -->
+			</div>
+			<div class="card-content">
+				<h3><a [routerLink]="['/productlist',x.Id]" href="#">{{x.Type}}</a></h3>
+				<h2><a [routerLink]="['/productlist',x.Id]">asdasd</a></h2>
+			</div>
+			<div class="card-actions">
+				<a href="listing-detail.html" class="card-action-icon"><i class="md-icon">favorite</i></a>
+				<!--<a href="listing-detail.html" class="card-action-icon"><i class="md-icon">flag</i></a>-->
+				<a [routerLink]="['/productlist',x.Id]" class="card-action-btn btn btn-transparent">Show More</a>
+			</div>
+		</div>
+	</div>
+</div>

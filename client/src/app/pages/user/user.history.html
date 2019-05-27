@@ -1,0 +1,82 @@
+<hr>
+<div class="content">
+    <div class="content-title">
+        <div class="">
+            <div class="col-md-6" *ngIf="IsBookedEvents">
+                <div class="admin-box">Booked Events
+                    <div class="admin-posts" *ngFor="let x of userInvoiceDetails;let i = index;">
+
+                        <div class="admin-post">
+                            <div class="admin-post-image">
+                                <a [routerLink]="['/user/invoice',x.invoiceId]" style="background-image: url('assets/img/tmp/post-1.jpg');"></a>
+                            </div>
+
+
+                            <div class="admin-post-title">
+                                <h2><a href="#">{{x.productName}}</a></h2>
+                                <h3>18. June 2016</h3>
+                            </div>
+
+
+                            <div class="admin-post-action">
+                                <a [routerLink]="['/user/invoice',x.invoiceId]"><i class="md-icon">keyboard_arrow_right</i></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="admin-box">
+                    Cart
+                    <div class="admin-posts" *ngFor="let x of userCartDetails;let i = index;">
+
+                        <div class="admin-post">
+                            <div class="admin-post-image">
+                                <a [routerLink]="['/user/invoice',x.ProductId]" style="background-image: url('assets/img/tmp/post-1.jpg');"></a>
+                            </div>
+
+
+                            <div class="admin-post-title">
+                                <h2><a href="#">{{x.ProductName}}</a></h2>
+                                <h3>18. June 2016</h3>
+                            </div>
+
+
+                            <div class="admin-post-action">
+                                <a href="#">Edit Post <i class="md-icon">keyboard_arrow_right</i></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf='IsTicketExist'>
+            <div class="col-md-6">
+                <div class="admin-box">Booked Pubs
+                    <div class="admin-posts" *ngFor="let x of userTicketDetails;let i = index;">
+                        <div class="admin-post">
+                            <div class="admin-post-image">
+                                <a href="#" style="background-image: url('assets/img/tmp/post-1.jpg');"></a>
+                            </div>
+                            <div class="">
+                                <!--<h2><a href="#">{{x.productName}}</a></h2>-->
+                                <h4><strong>{{x.Name}}</strong></h4>
+                            </div>
+                            <div class="admin-post-action">
+                                <strong>Start Time :</strong> {{x.Time |date:'medium'}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

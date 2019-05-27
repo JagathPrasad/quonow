@@ -1,0 +1,278 @@
+<div class="main-inner">
+
+
+	<div class="content">
+		<div class="content-title">
+			<div class="container">
+				<h1>Listing Detail Page</h1>
+				<ul class="breadcrumb">
+					<li>
+						<a href="">QuoNow</a>
+						<i class="md-icon">keyboard_arrow_right</i>
+					</li>
+					<li class="active">Listing Detail Page</li>
+				</ul>
+			</div>
+		</div>
+		<div class="listing-navigation">
+			<a href="#">
+				<i class="md-icon">keyboard_arrow_right</i>
+			</a>
+			<a href="#">
+				<i class="md-icon">favorite_border</i>
+			</a>
+			<a href="#">
+				<i class="md-icon">compare</i>
+			</a>
+			<a href="#">
+				<i class="md-icon">keyboard_arrow_left</i>
+			</a>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-lg-9">
+					<div class="push-top-bottom">
+						<div class="listing-detail">
+							<div class="gallery">
+								<div class="gallery-item" [ngStyle]="{'background-image':productDetails?.url.changingThisBreaksApplicationSecurity}">
+									<div class="gallery-item-description">
+										Quisque ornare efficitur risus eu bibendum
+									</div>
+								</div>
+							</div>
+							<h2>Property Description</h2>
+							<div [innerHTML]='productDetails.description'></div>
+							<h2>Opening Hours</h2>
+							<div class="opening-hours-wrapper">
+								<table class="opening-hours">
+									<thead>
+										<tr>
+											<th>MONDAY</th>
+											<th>TUESDAY</th>
+											<th>WEDNESDAY</th>
+											<th>THURSDAY</th>
+											<th>FRIDAY</th>
+											<th>SATURDAY</th>
+											<th>SUNDAY</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="open">
+												<span class="from">8:00 am</span>
+												<span class="separator">-</span>
+												<span class="to">8:00 pm</span>
+											</td>
+											<td class="other-day">
+												<span class="from">9:00 am</span>
+												<span class="separator">-</span>
+												<span class="to">9:00 pm</span>
+											</td>
+											<td class="other-day">
+												<span class="from">8:00 am</span>
+												<span class="separator">-</span>
+												<span class="to">3:00 pm</span>
+											</td>
+											<td class="other-day">
+												<span class="from">7:00 am</span>
+												<span class="separator">-</span>
+												<span class="to">9:00 pm</span>
+											</td>
+											<td class="other-day">
+												<span class="from">10:00 am</span>
+												<span class="separator">-</span>
+												<span class="to">5:00 pm</span>
+											</td>
+											<td class="other-day">
+												<span class="from">8:00 am</span>
+												<span class="separator">-</span>
+												<span class="to">11:00 am</span>
+											</td>
+											<td class="other-day">closed</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h2>Social Connections</h2>
+							<ul class="social">
+								<li class="facebook">
+									<a href="#">
+										<i class="fa fa-facebook"></i>
+									</a>
+								</li>
+								<li class="twitter">
+									<a href="#">
+										<i class="fa fa-twitter"></i>
+									</a>
+								</li>
+								<li class="google-plus">
+									<a href="#">
+										<i class="fa fa-google-plus"></i>
+									</a>
+								</li>
+								<li class="pinterest">
+									<a href="#">
+										<i class="fa fa-pinterest"></i>
+									</a>
+								</li>
+								<li class="vimeo">
+									<a href="#">
+										<i class="fa fa-vimeo"></i>
+									</a>
+								</li>
+								<li class="tripadvisor">
+									<a href="#">
+										<i class="fa fa-tripadvisor"></i>
+									</a>
+								</li>
+							</ul>
+							<h2>3 comments in this topic</h2>
+							<ul class="comments">
+								<li *ngFor="let x of productcomments">
+									<div class="comment">
+										<div class="comment-author">
+											<a href="#" style="background-image: url('assets/img/tmp/profile-1.jpg');"></a>
+										</div>
+										<div class="comment-content">
+											<div class="comment-meta">
+												<div class="comment-meta-author">
+													Posted by
+													<a href="#">admin</a>
+												</div>
+
+
+												<div class="comment-meta-reply">
+													<a href="#">Reply</a>
+												</div>
+
+												<div class="comment-meta-date">
+													<span>8:54 PM 11/23/2016</span>
+												</div>
+											</div>
+
+
+											<div class="comment-body">
+												<div class="comment-rating">
+													<i class="md-icon">star</i>
+													<i class="md-icon">star</i>
+													<i class="md-icon">star</i>
+													<i class="md-icon">star</i>
+													<i class="md-icon">star</i>
+												</div>
+
+
+												{{x.comments}}
+											</div>
+
+										</div>
+
+									</div>
+
+								</li>
+
+
+							</ul>
+
+							<h2>Write Feedback</h2>
+
+							<div class="comment-create clearfix">
+								<form>
+									<div class="form-group">
+										<label>Message</label>
+										<textarea [(ngModel)]="comment.description" name="description" class="form-control" rows="5"></textarea>
+									</div>
+
+
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label>Name</label>
+												<input type="text" [(ngModel)]="comment.name" name="name" class="form-control" />
+											</div>
+
+										</div>
+
+
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label>E-mail</label>
+												<input type="email" class="form-control" [(ngModel)]="comment.email" name="email" />
+											</div>
+
+										</div>
+									</div>
+									<div class="form-group-btn">
+										<button (click)="PostComment(comment);" class="btn btn-primary btn-large pull-right">Post Comment</button>
+									</div>
+
+								</form>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+				<div class="col-md-4 col-lg-3">
+					<div class="sidebar">
+						<div class="widget">
+							<div class="overview">
+								<ul>
+									<li>
+										<button class="btn btn-primary" (click)="AddToCart(productId);">
+											<span class="glyphicon glyphicon-pencil"></span>Add to Cart</button>
+									</li>
+									<li>
+										<button class="btn btn-primary" (click)="MakePayment(productId);">
+											<span class="glyphicon glyphicon-pencil"></span>Make Payment</button>
+									</li>
+									<li>
+										<strong>Price</strong>
+										<span>{{productDetails.price}} र / person</span>
+									</li>
+									<!--<li><strong>Location</strong><span>New York</span></li>
+									<li><strong>Category</strong><span>Restaurant</span></li>-->
+									<li>
+										<strong>Rating</strong>
+										<span>4.2 by 2 users</span>
+									</li>
+									<li>
+										<strong>Phone</strong>
+										<span>+1-234-567-890</span>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+
+						<div class="widget">
+							<h2 class="widgettitle">Contact Information</h2>
+
+							<ul class="contact">
+								<li>
+									<i class="md-icon">email</i>
+									<a href="mailto:hi@example.com">hi@example.com</a>
+								</li>
+								<li>
+									<i class="md-icon">link</i>
+									<a href="#">example.com</a>
+								</li>
+								<li>
+									<i class="md-icon">phone</i> +01-23-456-789</li>
+								<li>
+									<i class="md-icon">location_on</i> 1900 Pico Blvd
+									<br>Santa Monica, CA</li>
+							</ul>
+						</div>
+
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

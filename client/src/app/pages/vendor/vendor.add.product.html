@@ -1,0 +1,53 @@
+<div class="admin-stats">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3 shadowBox">
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 pull-left">Event Type</label>
+                <div class=" col-md-10 pull-right">
+                    <select class="form-control" (change)="BindEvents(product.Id)" [(ngModel)]="product.Id" #EventTypeId="ngModel">
+                        <option *ngFor="let x of EventTypesList;let i=index;" value="{{x.Id}}">{{x.Type}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 pull-left">Event Name</label>
+                <div class=" col-md-10 pull-right">
+                    <select class="form-control" (change)="BindProductType(product.EventId)" [(ngModel)]="product.EventId" #EventId="ngModel">
+                    <option *ngFor="let y of EventsList;let i=index;" value="{{y.Id}}">{{y.Name}}</option>
+                  </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 pull-left">Product Type</label>
+                <div class=" col-md-10 pull-right">
+                    <select class="form-control" [(ngModel)]="product.ProductTypeId" #ProductTypeId="ngModel">
+                    <option *ngFor="let z of ProductTypeList;let i=index;" value="{{z.Id}}">{{z.Type}}</option>
+                  </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 pull-left">Product</label>
+                <div class=" col-md-10 pull-right">
+                    <input class="form-control" type="text" [(ngModel)]="product.ProductName" #ProductTypeName="ngModel">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 pull-left">Price</label>
+                <div class=" col-md-10 pull-right">
+                    <input class="form-control" type="text" [(ngModel)]="product.Price" #Price="ngModel">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 pull-left">Image</label>
+                <div class=" col-md-10 pull-right">
+                    <input class="form-control" type="file" #filetype id="btnUpload" value="Upload" class="upload" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <button class="btn btn-lg btn-primary pull-right" (click)="SaveProduct(product,filetype.files);">Save Event</button>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>

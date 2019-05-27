@@ -1,0 +1,64 @@
+<div class="admin-box">
+    <table class="table small-header">
+        <thead>
+            <tr>
+                <th class="min-width"></th>
+                <th class="min-width">Image</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let x of productDetails;let i=index;">
+                <td class="min-width">
+                    <input type="checkbox" />
+                </td>
+                <td class="min-width">
+                    <img src="assets/img/tmp/card-2.jpg" alt="Cozzy Coffee Shop">
+                </td>
+                <td>{{x.ProductName}}</td>
+                <td>
+                    <a href="#">Drink &amp; Food</a>
+                </td>
+                <td>
+                    <a href="#">See H. Oceguera</a>
+                </td>
+                <td>
+                    <a data-toggle="modal" data-target="#myModal" (click)="ViewProduct(x.Id);" class="btn btn-primary">
+                        <i class="md-icon">remove_red_eye</i> View</a>
+                    <a (click)="ApproveProduct(x.Id);" class="btn btn-primary">
+                        <i class="md-icon">check</i> Approve</a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="md-icon">delete</i> Reject</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{userName}}</h4>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title">{{userName}}</h4>
+                <h4 class="modal-title">{{price}}</h4>
+                <h4 class="modal-title">{{image}}</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.top5per {
+    margin-top: 5% !important;
+}
+.footer-widgets {
+    margin-top: 5%;
+}
+.shadowBox{
+    padding: 3%;
+    box-shadow: 0 5px 12px rgba(0,0,0,.18);
+}
+

@@ -1,0 +1,72 @@
+<div>
+  <a href="">
+    <img src="assets/img/logo.png" alt="" class="header-top-logo">
+  </a>
+
+  <div class="nav-primary-wrapper collapse navbar-toggleable-sm">
+    <ul class="nav nav-pills ">
+      <li class="nav-item has-submenu">
+        <a [routerLink]="['/index']" class="nav-link">Home</a>
+      </li>
+
+      <li class="nav-item has-submenu">
+        <a href="" class="nav-link ">Live Ticketing Events</a>
+      </li>
+      <li class="nav-item has-submenu" *ngIf="!isAuthenticated">
+        <a [routerLink]="['/registration','user']" class="nav-link">Registration</a>
+      </li>
+      <li class="nav-item has-submenu" *ngIf="!isAuthenticated">
+        <a [routerLink]="['/registration','partner']" class="nav-link ">Become a Partner</a>
+      </li>
+
+      <li class="nav-item has-submenu" *ngIf="isAuthenticated">
+        <a [routerLink]="['/kart']" class="nav-link ">Kart</a>
+      </li>
+      <li class="nav-item has-submenu">
+        <a [routerLink]="['/aboutus/contactus']" class="nav-link ">Contact</a>
+      </li>
+      <li *ngIf="isAuthenticated " class="nav-item has-submenu">
+        <a *ngIf="userType == 1" [routerLink]="['/admin']" class="nav-link">Admin</a>
+        <a *ngIf="userType == 2" [routerLink]="['/vendor']" class="nav-link">Vendor</a>
+        <a *ngIf="userType == 3" [routerLink]="['/user']" class="nav-link">User</a>
+      </li>
+    </ul>
+  </div>
+  <ul class="nav nav-pills  has-submenu secondary">
+    <li class="nav-item has-submenu" *ngIf="!isAuthenticated">
+      <a [routerLink]="['/login']" class="nav-link">Login</a>
+    </li>
+    <li *ngIf="isAuthenticated;" class="nav-item user-avatar-wrapper">
+      <a href="#" class="nav-link circle user-avatar-image" style="background-image: url('assets/img/tmp/profile-1.jpg')"></a>
+      <span class="user-avatar-status"></span>
+
+      <ul class="header-more-menu">
+        <li>
+          <a [routerLink]="['/profile']">Profile</a>
+        </li>
+        <li>
+          <a *ngIf="userType == 1" [routerLink]="['/admin']">Account</a>
+          <a *ngIf="userType == 2" [routerLink]="['/vendor']">Account</a>
+          <a *ngIf="userType == 3" [routerLink]="['/user']">Account</a>
+        </li>
+        <li>
+          <a (click)="LogOut();">Logout</a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+
+
+  <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target=".nav-primary-wrapper">
+    <i class="md-icon">menu</i>
+  </button>
+  <!-- <li>
+    <a [routerLink]="['/loginFG/facebook']" class="btn btn-default" style="background-color:#3b5998;color:black;">
+      <span class="fa fa-facebook"></span>
+    </a>
+    <a [routerLink]="['/loginFG/gmail']" class="btn btn-default" style="background-color:#dd4b39;color:black;">
+      <span class="fa fa-google"></span>
+    </a>
+  </li> -->
+</div>

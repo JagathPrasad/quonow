@@ -1,0 +1,15 @@
+.ganttBar{   position: absolute;
+    height: 100%;}
+
+
+.arrtoolTip{display: none;     position: absolute;
+    background: #fff;
+    color: #333;
+    top: -30px;
+    font-size: 14px;
+    padding: 4px;
+    border-radius: 5px;}
+
+.arrowCont:hover .arrtoolTip{display: inline-block}
+.leftArrowCont:hover .arrtoolTip{left : 0}
+.rightArrowCont:hover .arrtoolTip{    right: 0px;}
