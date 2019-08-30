@@ -10,6 +10,8 @@ import {
 } from '../admin/admin.add.component';
 
 import { AdminTicketingComponent } from '../admin/admin.ticket.component';
+import { AdminArtistComponent } from './admin.artist.component';
+import { AdminMallComponent } from './admin.mall.component';
 const routes: Routes = [
     {
         path: '', component: AdminComponent// ,resolve:{
@@ -28,7 +30,8 @@ const routes: Routes = [
                 ]
             },
             { path: 'tickets', component: AdminTicketingComponent }
-
+            ,{path:'artist',component:AdminArtistComponent}
+            ,{path:'mall',component:AdminMallComponent}
         ]
 
     }

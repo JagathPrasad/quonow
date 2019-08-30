@@ -41,7 +41,7 @@
 			</div>
 			<div class="hero-layer"></div>
 		</div>
-		<div class="push-bottom">
+		<section class="push-bottom" id="tickets">
 			<div class="container">
 				<div class="page-title background-white">
 					<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '25px',backdropBackgroundColour: 'rgba(0,0,0,0.5)',fullScreenBackdrop:true, primaryColour: '#590a66', secondaryColour: '#590a66',tertiaryColour: '#590a66'}"></ngx-loading>
@@ -78,86 +78,59 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<!-- <div class="push-bottom">
-			<div class="image-wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="image-description-wrapper col-md-12 col-lg-7">
-							<div class="image-description">
-								<h2>QuoNow is advanced
-									<strong>directory &amp; listing</strong> developer toolkit</h2>
-
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="image-description-box">
-											<h3>
-												<i class="md-icon">laptop</i> Responsive</h3>
-
-											<p>
-												Maecenas augue magna, mollis a dictum id, ornare ac turpis. Morbi vel faucibus ligula.
-											</p>
-										</div>
-
-									</div>
-									<div class="col-sm-6">
-										<div class="image-description-box">
-											<h3>
-												<i class="md-icon">layers</i> Elements</h3>
-
-											<p>
-												Maecenas augue magna, mollis a dictum id, ornare ac turpis. Morbi vel faucibus ligula.
-											</p>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="image-description-box">
-											<h3>
-												<i class="md-icon">gps_fixed</i> Geolocation</h3>
-
-											<p>
-												Maecenas augue magna, mollis a dictum id, ornare ac turpis. Morbi vel faucibus ligula.
-											</p>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="image-description-box">
-											<h3>
-												<i class="md-icon">pie_chart_outlined</i> Charting</h3>
-
-											<p>
-												Maecenas augue magna, mollis a dictum id, ornare ac turpis. Morbi vel faucibus ligula.
-											</p>
-										</div>
-									</div>
-
-								</div>
+		</section>
+		<section id="equipements">
+			<div class="container">
+				<div class="page-title">
+					<h2>Equipement</h2>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-xl-12">
+						<div class="cards-wrapper">
+							<div class="row">
+								<producttypes></producttypes>
 							</div>
 						</div>
 					</div>
 
 				</div>
-				<div class="image-holder col-lg-5 col-lg-offset-7 hidden-md-down"></div>
 			</div>
-		</div> -->
-
-
-		<div class="container">
-			<div class="page-title">
-				<h2>Events</h2>
-			</div>
-			<div class="row">
-				<div class="col-sm-12 col-xl-12">
-					<div class="cards-wrapper">
-						<div class="row">
-							<producttypes></producttypes>
+		</section>
+		<section id="artist">
+			<div class="container">
+				<div class="page-title">
+					<h2>Artist</h2>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-xl-12">
+						<div class="cards-wrapper">
+							<div class="row">
+								<artist></artist>
+							</div>
 						</div>
 					</div>
-				</div>
 
+				</div>
 			</div>
-		</div>
+		</section>
+		<section id="mall">
+			<div class="container">
+				<div class="page-title">
+					<h2>Plazas</h2>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-xl-12">
+						<div class="cards-wrapper">
+							<div class="row">
+								<artist></artist>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
 		<div class="cta">
 			<div class="container">
 				<h2>Newsletter Subscription</h2>
@@ -178,12 +151,3 @@
 			</div>
 		</div>
 	</div>
-	<!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107719391-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-107719391-1');
-	</script>

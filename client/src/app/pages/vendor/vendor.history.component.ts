@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { serviceModel } from '../commonModels/serviceModel';
 import { VendorService } from '../vendor/vendor.service';
-
+import { AdminService } from '../admin/admin.service';
+import { ProductModel } from '../commonModels/eventTypeModel';
+declare var swal: any;
 @Component({
     selector: 'vendorhistory',
     templateUrl: '../vendor/vendor.history.html'
@@ -27,5 +29,7 @@ export class VendorHistoryComponent implements OnInit {
         });
 
     }
+
+    
 
 }

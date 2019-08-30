@@ -40,10 +40,23 @@ export class VendorAddProductComponent {
     public EventsList: any;
     public ProductTypeList: any;
     public auth = new serviceModel();
+    public productList: any;
+    public serviceModel = new serviceModel();
     constructor(private service: VendorService, private adminservice: AdminService) {
         this.BindEventType();
+        this.BindMyProducts();
     }
+    
+        ngOnInit() {
 
+
+    }
+    BindMyProducts(): void {
+        this.service.GetVendorProductsList(this.serviceModel.authorization).subscribe(x => {
+            this.productList = x;
+        });
+
+    }
 
     BindEventType(): any {
         this.adminservice.GetEventTypes().subscribe(x => {

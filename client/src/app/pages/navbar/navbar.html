@@ -8,10 +8,6 @@
       <li class="nav-item has-submenu">
         <a [routerLink]="['/index']" class="nav-link">Home</a>
       </li>
-
-      <li class="nav-item has-submenu">
-        <a href="" class="nav-link ">Live Ticketing Events</a>
-      </li>
       <li class="nav-item has-submenu" *ngIf="!isAuthenticated">
         <a [routerLink]="['/registration','user']" class="nav-link">Registration</a>
       </li>

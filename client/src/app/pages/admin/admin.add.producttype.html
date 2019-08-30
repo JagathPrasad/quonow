@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-5 col-md-offset-3 shadowBox">
             <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Event Type</label>
+                <label for="example-text-input" class="col-md-2 pull-left">Equipement Type</label>
                 <div class=" col-md-10 pull-right">
                     <select class="form-control" (change)="BindEvents(product.EventTypeId)" [(ngModel)]="product.EventTypeId" #EventTypeId="ngModel">
                         <option *ngFor="let x of EventTypesList;let i=index;" value="{{x.Id}}">{{x.Type}}</option>
@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Event Name</label>
+                <label for="example-text-input" class="col-md-2 pull-left">Equipement Name</label>
                 <div class=" col-md-10 pull-right">
                     <select class="form-control" [(ngModel)]="product.EventId" #EventId="ngModel">
                     <option *ngFor="let y of EventsList;let i=index;" value="{{y.Id}}">{{y.Name}}</option>

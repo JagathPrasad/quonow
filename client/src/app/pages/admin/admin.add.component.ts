@@ -23,7 +23,36 @@ declare var swal: any;
 
 export class AdminAddComponent {
 
-    constructor() {
+    public productDetails: any;
+    constructor(private service: AdminService) {
+        this.GetProductList();
+
+
+    }
+
+    GetProductList(): void {
+        this.service.GetProducts().subscribe(x => {
+            this.productDetails = x;
+        });
+    }
+
+    ApproveProduct(id: any): any {
+        this.service.ApproveProduct(id).subscribe(x => {
+            swal("Approve!", "You Approved Successfully!", "success");
+            this.GetProductList();
+        });
+
+    }
+
+
+    ViewProduct(id: any): void {
+        debugger;
+        this.service.GetProductDetails(id).subscribe(x => {
+            debugger;
+            // this.userName = x.UserName;
+            // this.price = x.Price;
+            // this.image = x.Star;
+        });
 
     }
 
@@ -48,7 +77,7 @@ export class AdminEventComponent {
 
     public event = {};
     public EventTypes: any;
-
+    
     constructor(private service: AdminService) {
         this.BindEventTypes();
 
@@ -94,6 +123,8 @@ export class AdminEventComponent {
 
 
     }
+
+    
 }
 
 
@@ -231,8 +262,8 @@ export class AdminProductTypeComponent {
         var fileReader = new FileReader();
         fileReader.onload = function (readerEvt) {
             var binaryString = fileReader.result;
-            var binarystring = btoa(binaryString);
-            sessionStorage.setItem('imagebinary', binaryString);
+            //var binarystring = btoa(binaryString);
+           // sessionStorage.setItem('imagebinary', binaryString);
         };
         let x = fileReader.readAsBinaryString(this.file);
     }

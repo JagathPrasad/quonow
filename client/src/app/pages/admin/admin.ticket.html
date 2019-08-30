@@ -1,91 +1,97 @@
-<!--<div class="" style="margin-top:20px;margin-bottom:10px;">
-    <button class="btn btn-primary pull-right" (click)="SavePub();">Add Pub Details</button>
-</div>-->
-
 <div class="admin-stats">
     <div class="row">
-        <div class="col-md-4 shadowBox">
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Name</label>
-                <div class=" col-md-10 pull-right">
-                    <input class="form-control" type="text" [(ngModel)]="pub.Name" #Name="ngModel" name="Name">
+        <div class="col-md-12 shadowBox">
+            <h2>New Event</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Name</label>
+                        <div class=" col-md-10 pull-right">
+                            <input class="form-control" type="text" [(ngModel)]="pub.Name" #Name="ngModel" name="Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Location</label>
+                        <div class=" col-md-10 pull-right">
+                            <textarea class="form-control" name="Location" [(ngModel)]="pub.Location" #Location="ngModel"
+                                placeholder="address"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Total Tickets</label>
+                        <div class=" col-md-10 pull-right">
+                            <input class="form-control" type="text" name="Total" [(ngModel)]="pub.Total" #Total="ngModel"
+                                placeholder="00" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Phone</label>
+                        <div class=" col-md-10 pull-right">
+                            <input class="form-control" type="text" name="Phone" [(ngModel)]="pub.Phone" #Phone="ngModel"
+                                placeholder="contact-no" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Endtime</label>
+                        <div class=" col-md-10 pull-right">
+                            <input class="form-control" type="datetime-local" [(ngModel)]="pub.endtime" name="endtime"
+                                #endtime="ngModel" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Image</label>
+                        <div class=" col-md-10 pull-right">
+                            <!-- <input style="line-height:0;" type="file" class="form-control" (change)="onChange($event)" [(ngModel)]="product.documents" #documents="ngModel"> -->
+                            <input class="form-control" type="file" #filetype id="btnUpload" value="Upload" class="upload" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Organiser</label>
+                        <div class=" col-md-10 pull-right">
+                            <input class="form-control" type="text" [(ngModel)]="pub.Organiser" #Name="ngModel" name="Organiser"
+                                placeholder="company">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Price</label>
+                        <div class=" col-md-10 pull-right">
+                            <input class="form-control" name="Price" type="text" [(ngModel)]="pub.Price" #Price="ngModel"
+                                placeholder="₹ 00.00">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Stag</label>
+                        <div class=" col-md-10 pull-right">
+                            <input class="form-control" type="text" name="Stag" [(ngModel)]="pub.Stag" #Stag="ngModel"
+                                placeholder="₹ 00.00" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Starttime</label>
+                        <div class=" col-md-10 pull-right">
+                            <input class="form-control" type="datetime-local" [(ngModel)]="pub.Starttime" name="Starttime"
+                                #Starttime="ngModel" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-2 pull-left">Description</label>
+                        <div class=" col-md-10 pull-right">
+                            <textarea class="form-control" name="Location" placeholder="details"></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Organiser</label>
-                <div class=" col-md-10 pull-right">
-                    <input class="form-control" type="text" [(ngModel)]="pub.Organiser" #Name="ngModel" name="Organiser">
-                </div>
+                <button class="btn btn-lg btn-primary pull-right" (click)="AddPubDetails(pub,filetype.files);">Save
+                    Event</button>
             </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Location</label>
-                <div class=" col-md-10 pull-right">
-                    <input class="form-control" type="text" name="Location" [(ngModel)]="pub.Location" #Location="ngModel" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Price</label>
-                <div class=" col-md-10 pull-right">
-                    <input class="form-control" name="Price" type="text" [(ngModel)]="pub.Price" #Price="ngModel">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Total</label>
-                <div class=" col-md-10 pull-right">
-                    <input class="form-control" type="text" name="Total" [(ngModel)]="pub.Total" #Total="ngModel" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Stag</label>
-                <div class=" col-md-10 pull-right">
-                    <input class="form-control" type="text" name="Stag" [(ngModel)]="pub.Stag" #Stag="ngModel" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Phone</label>
-                <div class=" col-md-10 pull-right">
-                    <input class="form-control" type="text" name="Phone" [(ngModel)]="pub.Phone" #Phone="ngModel" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Star</label>
-                <div class=" col-md-10 pull-right">
-                    <input class="form-control" type="text" name="Star" [(ngModel)]="pub.Star" #Star="ngModel" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Starttime</label>
-                <div class=" col-md-10 pull-right">
-                    <!-- <input class="form-control" type="text" name="Starttime" [(ngModel)]="pub.Starttime" #Starttime="ngModel" /> -->
-                    <input class="form-control" type="datetime-local" [(ngModel)]="pub.Starttime" name="Starttime" #Starttime="ngModel" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Endtime</label>
-                <div class=" col-md-10 pull-right">
-                    <!-- <input class="form-control" type="text" name="Endtime" [(ngModel)]="pub.Endtime" #Endtime="ngModel" /> -->
-                    <p-calendar   [(ngModel)]="pub.Endtime"  dateFormat="dd/mm/yy" name="EndTime" #EndTime [showIcon]="true"></p-calendar>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Image</label>
-                <div class=" col-md-10 pull-right">
-                    <!-- <input style="line-height:0;" type="file" class="form-control" (change)="onChange($event)" [(ngModel)]="product.documents" #documents="ngModel"> -->
-                    <input class="form-control" type="file" #filetype id="btnUpload" value="Upload" class="upload" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <button class="btn btn-lg btn-primary pull-right" (click)="AddPubDetails(pub,filetype.files);">Save Event</button>
-            </div>
-            <div class="form-group row">
-                <label for="example-text-input" class="col-md-2 pull-left">Starttime</label>
-                <!-- <div class=" col-md-10 pull-right">
-                    <p-calendar [(ngModel)]="date1"></p-calendar> {{date1}}
-                </div> -->
-            </div>
+
         </div>
-        <div class="col-md-8">
-            <div class="admin-box no-padding">
+        <div class="col-md-12 shadowBox" style="margin-top:20px;">
+            <h2>Created Events</h2>
+            <div class="admin-box  no-padding">
                 <table class="table small-header">
                     <thead>
                         <tr>
@@ -94,7 +100,7 @@
                             <th>Pub Name</th>
                             <th>Start Time</th>
                             <th>End Time</th>
-                            <th>Approve/Reject</th>
+                            <th>Cancel/Delete</th>
                         </tr>
                     </thead>
 
@@ -112,10 +118,10 @@
                             <td>{{x.startTime}}</td>
                             <td>{{x.endTime}}</td>
                             <td class="min-width">
-                                <a (click)="ApprovePub();" class="btn btn-secondary">
-                                    <i class="md-icon">edit</i> Approve</a>
                                 <a (click)="RejectPub();" class="btn btn-secondary">
-                                    <i class="md-icon">delete</i> Reject</a>
+                                    <i class="md-icon"></i> Cancel</a>
+                                <a (click)="RejectPub();" class="btn btn-secondary">
+                                    <i class="md-icon">delete</i> Delete</a>
                             </td>
                         </tr>
 
@@ -124,7 +130,9 @@
             </div>
             <br>
             <br>
+            <h2>Purchased List</h2>
             <div class="admin-box no-padding">
+
                 <table class="table small-header">
                     <thead>
                         <tr>

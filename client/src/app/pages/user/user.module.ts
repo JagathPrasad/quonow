@@ -8,11 +8,16 @@ import { UserProfileComponent } from '../user/user.profile';
 import { UserCustomComponent } from '../user/user.custom';
 import { UserInvoiceComponent } from '../user/user.invoice.component';
 import { UserReviewComponent } from '../user/user.review.component';
+import { UserArtistComponent } from './user.artist.component';
+import { UserMallComponent } from './user.mall.component';
 
 
 @NgModule({
     imports: [CommonModule, routing]
-    , declarations: [UserComponent, UserProfileComponent, UserHistoryComponent, UserCustomComponent, UserInvoiceComponent, UserReviewComponent]
+    , declarations: [UserComponent, UserProfileComponent
+        , UserHistoryComponent, UserCustomComponent
+        , UserInvoiceComponent, UserReviewComponent
+        , UserArtistComponent, UserMallComponent]
 
 })
 

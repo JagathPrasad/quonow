@@ -18,7 +18,7 @@ export class DashboardComponent {
     public imageUrl = new serviceModel();
     public loading = false;
     constructor(private service: DashboardService, private router: Router, private sanitizer: DomSanitizer) {
-        //  this.GetLoginDetails();
+        //this.GetLoginDetails();
         this.GetPubDetails();
     }
 

@@ -3,8 +3,10 @@ import { UserComponent } from '../user/user.component';
 
 import { UserHistoryComponent } from '../user/user.history';
 import { UserProfileComponent } from '../user/user.profile';
-import {UserInvoiceComponent} from '../user/user.invoice.component';
-import {UserCustomComponent} from '../user/user.custom';
+import { UserInvoiceComponent } from '../user/user.invoice.component';
+import { UserCustomComponent } from '../user/user.custom';
+import { UserArtistComponent } from './user.artist.component';
+import { UserMallComponent } from './user.mall.component';
 
 const routes: Routes = [
     {
@@ -16,7 +18,8 @@ const routes: Routes = [
         { path: 'history', component: UserHistoryComponent },
         { path: 'addlist', component: UserCustomComponent },
         { path: 'invoice/:invoiceId', component: UserInvoiceComponent }
-
+            , { path: 'artist', component: UserArtistComponent }
+            , { path: 'mall', component: UserMallComponent }
         ]
     }
 ];

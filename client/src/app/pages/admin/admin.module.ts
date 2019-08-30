@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 
 //import {BarchartComponent} from '../charts/barchart/barchart.component';
 import { ChartModule, CalendarModule } from 'primeng/primeng';
+import { AdminArtistComponent } from './admin.artist.component';
+import { AdminMallComponent } from './admin.mall.component';
 
 @NgModule({
     imports: [CommonModule, routing, FormsModule, ChartModule, CalendarModule],
@@ -19,6 +21,7 @@ import { ChartModule, CalendarModule } from 'primeng/primeng';
         , AdminAddComponent, AdminEventComponent
         , AdminEventTypeComponent, AdminProductTypeComponent
         , AdminUserListComponent, AdminTicketingComponent
+        , AdminArtistComponent, AdminMallComponent
     ]
     , exports: [AdminUserComponent]
 })

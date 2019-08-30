@@ -12,14 +12,25 @@
                 <div class="dashboard-nav-primary collapse navbar-toggleable-md">
                     <ul class="nav nav-pills nav-stacked">
                         <li class="nav-item">
-                            <a [routerLink]="['/user']" href="#" class="nav-link active"><i class="md-icon">dashboard</i> Dashboard</a>
+                            <a [routerLink]="['/user']" href="#" class="nav-link active"><i class="md-icon">dashboard</i>
+                                Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a [routerLink]="['/user', 'history']" href="#" class="nav-link "><i class="md-icon">rate_review</i> History</a>
+                            <a [routerLink]="['/user', 'history']" href="#" class="nav-link "><i class="md-icon">rate_review</i>
+                                History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['/user', 'artist']" href="#" class="nav-link "><i class="md-icon">rate_review</i>
+                                Artist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['/user', 'mall']" href="#" class="nav-link "><i class="md-icon">rate_review</i>
+                                Plaza</a>
                         </li>
 
                         <li class="nav-item">
-                            <a [routerLink]="['/user', 'addlist']" href="#" class="nav-link "><i class="md-icon">people</i> Cart Details <span>1</span></a>
+                            <a [routerLink]="['/user', 'addlist']" href="#" class="nav-link "><i class="md-icon">people</i>
+                                Cart Details</a>
                         </li>
 
                     </ul>
@@ -32,7 +43,8 @@
 
                     <ul class="recent">
                         <li><img src="assets/img/tmp/profile-1.jpg" alt=""> category.</li>
-                        <li><img src="assets/img/tmp/profile-2.jpg" alt=""> is asking for the agent role with review provilege.</li>
+                        <li><img src="assets/img/tmp/profile-2.jpg" alt=""> is asking for the agent role with review
+                            provilege.</li>
                         <li><img src="assets/img/tmp/profile-3.jpg" alt=""> category.</li>
                     </ul>
                 </div>
@@ -41,20 +53,9 @@
 
         </div>
         <div class="col-md-10">
-            <div class="admin-header-search">
-                <form method="get">
-                    <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="md-icon">search</i>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Enter your search keyword ...">
-                    </div>
-
-                </form>
-            </div>
             <router-outlet></router-outlet>
         </div>
-        
+
     </div>
 
 </div>
