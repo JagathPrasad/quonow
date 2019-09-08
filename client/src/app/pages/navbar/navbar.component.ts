@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation,OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { JWTService } from '../auth/jwt.service';
 import { Router } from '@angular/router';
 
@@ -11,19 +11,18 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
     public isAuthenticated: boolean = false;
-    public userType:number=0;
+    public userType: number = 0;
 
     constructor(private service: JWTService, private router: Router) {
-        debugger;
         if (this.service.getToken() != '' && this.service.getToken() != null) {
             this.isAuthenticated = true;
-            this.userType=parseInt(this.service.getuserType());
+            this.userType = parseInt(this.service.getuserType());
         }
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
-        
+
     }
 
 

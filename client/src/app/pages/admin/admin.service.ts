@@ -134,11 +134,16 @@ export class AdminService {
         return this.http.get(this.service.httpUrl + 'Admin/GetCountDetails').map((res: Response) => res.json());
     }
 
-    PostUploadFormDate(formdata: FormData,Id): Observable<any> {
+    PostUploadFormDate(formdata: FormData, Id): Observable<any> {
         let headers = new Headers()
         let myParams = new URLSearchParams();
-        myParams.append('Id',Id);
+        myParams.append('Id', Id);
         let options = new RequestOptions({ headers: headers, params: myParams });
         return this.http.post(this.service.httpUrl + 'Login/PostUploadFormDate', formdata, options).map((res: Response) => res.json);
+    }
+
+
+    public SaveArtist(artist: any): Observable<any> {
+        return this.http.post(this.service.httpUrl + 'Artist/PostSaveArtist', artist).map((res: Response) => res.json());
     }
 }

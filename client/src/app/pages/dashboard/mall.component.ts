@@ -7,16 +7,18 @@ import { serviceModel } from '../commonModels/serviceModel';
 
 @Component({
     selector: 'mall'
-    , templateUrl: './mall.component.html'
+    , templateUrl: './mall.html'
     , encapsulation: ViewEncapsulation.None,
     providers: [DashboardService, JWTService]
 })
 
 export class MallComponent {
+    public mallsList: any;
     public ProductList: any;
     public imageUrl = new serviceModel();
     constructor(private elem: ElementRef, private service: DashboardService, private sanitizer: DomSanitizer, private jwt: JWTService, private router: Router) {
-        this.GetProductTypes();
+        this.GetMalls();
+        console.log('d');
     }
 
 
@@ -41,4 +43,12 @@ export class MallComponent {
             this.router.navigate(['/login']);
         }
     }
+
+
+    public GetMalls(): any {
+        this.service.GetMalls().subscribe(x => {
+            this.mallsList = x;
+        });
+    }
+
 }
