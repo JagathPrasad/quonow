@@ -15,11 +15,13 @@ declare var swal: any;
 
 export class DashboardComponent {
     public pubDetails: any;
+    public locations: any = [];
     public imageUrl = new serviceModel();
     public loading = false;
     constructor(private service: DashboardService, private router: Router, private sanitizer: DomSanitizer) {
         //this.GetLoginDetails();
         this.GetPubDetails();
+        this.GetLocations();
     }
 
     GetLoginDetails(): any {
@@ -51,4 +53,13 @@ export class DashboardComponent {
     }
 
 
+    public GetLocations(): any {
+        this.service.GetLocations().subscribe(x => {
+            this.locations = x;
+            console.log(x, 'locations');
+        })
+    }
+    public filterForeCasts(value: any) {
+
+    }
 }

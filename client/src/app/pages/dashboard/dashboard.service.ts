@@ -37,5 +37,10 @@ export class DashboardService {
     GetArtist(): Observable<any> {
         return this.http.get(this.service.httpUrl + 'Artist/GetArtist').map((res: Response) => res.json());
     }
+
+
+    GetLocations(): Observable<any> {
+        return this.http.get(this.service.httpUrl + 'Product/GetLocations').map((res: Response) => res.json());
+    }
 }
 

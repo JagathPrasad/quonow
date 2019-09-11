@@ -8,17 +8,25 @@
 						<div class="input-group-addon">
 							<i class="md-icon">my_location</i>
 						</div>
-						<input type="text" class="form-control" placeholder="Type your location">
+						<!-- <input type="text" class="form-control" placeholder="Type your location"> -->
+						<select class="form-control" (change)="filterForeCasts($event.target.value)">
+							<option value="0">--Select--</option>
+							<option *ngFor="let summary of locations" value={{summary.id}}>
+								{{summary.area}}
+							</option>
+						</select>
 					</div>
 					<div class="input-group col-sm-12 col-md-6">
 						<div class="input-group-addon">
 							<i class="md-icon">search</i>
 						</div>
-						<input type="text" class="form-control" placeholder="Search for spot, event or a restaurant" #searchText>
+						<input type="text" class="form-control" placeholder="Search for spot, event or a restaurant"
+							#searchText>
 					</div>
 
 					<div class="form-group last col-sm-12 col-md-2">
-						<button class="btn btn-primary btn-block" (click)="SearchProducts(searchText.value)"> Search</button>
+						<button class="btn btn-primary btn-block" (click)="SearchProducts(searchText.value)">
+							Search</button>
 					</div>
 				</div>
 			</div>
@@ -33,7 +41,8 @@
 					<h1>Create Something Brilliant</h1>
 
 					<p>
-						With the QuoNow template you can create awesome directory listings websites. Dozens of well prepared layouts and
+						With the QuoNow template you can create awesome directory listings websites. Dozens of well
+						prepared layouts and
 						elements
 						will help you.
 					</p>
@@ -44,14 +53,17 @@
 		<section class="push-bottom" id="tickets">
 			<div class="container">
 				<div class="page-title background-white">
-					<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '25px',backdropBackgroundColour: 'rgba(0,0,0,0.5)',fullScreenBackdrop:true, primaryColour: '#590a66', secondaryColour: '#590a66',tertiaryColour: '#590a66'}"></ngx-loading>
+					<ngx-loading [show]="loading"
+						[config]="{ backdropBorderRadius: '25px',backdropBackgroundColour: 'rgba(0,0,0,0.5)',fullScreenBackdrop:true, primaryColour: '#590a66', secondaryColour: '#590a66',tertiaryColour: '#590a66'}">
+					</ngx-loading>
 					<h2>Tickets</h2>
 					<p>Best pub and events in your city hand picked by QuoNow stuff</p>
 				</div>
 				<div class="row">
 					<div *ngFor="let x of pubDetails;let i=index;" class="col-md-3">
 						<div class="card">
-							<div class="card-image" [ngStyle]="{'background-image':x.url.changingThisBreaksApplicationSecurity}">
+							<div class="card-image"
+								[ngStyle]="{'background-image':x.url.changingThisBreaksApplicationSecurity}">
 								<a [routerLink]="['/ticket',x.Id]"></a>
 							</div>
 							<div class="card-content">
@@ -71,7 +83,8 @@
 									<i class="md-icon">access_time</i>
 									<span>{{x.Date | date:'medium'}}</span>
 								</a> -->
-								<a [routerLink]="['/ticket',x.Id]" class="card-action-btn btn btn-transparent">Read More</a>
+								<a [routerLink]="['/ticket',x.Id]" class="card-action-btn btn btn-transparent">Read
+									More</a>
 								<br>
 							</div>
 						</div>

@@ -35,6 +35,9 @@
         <AssociationConnector Association="QUONOWModel.FK__Refund__UserId__29572725" ManuallyRouted="false" />
         <AssociationConnector Association="QUONOWModel.FK__Reviews__UserId__4AB81AF0" ManuallyRouted="false" />
         <AssociationConnector Association="QUONOWModel.FK__User__UserTypeId__1273C1CD" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QUONOWModel.Artist" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="QUONOWModel.Location" Width="1.5" PointX="12.375" PointY="10.75" />
+        <EntityTypeShape EntityType="QUONOWModel.Mall" Width="1.5" PointX="6.375" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

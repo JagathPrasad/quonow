@@ -40,5 +40,8 @@ namespace QUONOW.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserLocation> UserLocations { get; set; }
         public virtual DbSet<UserType> UserTypes { get; set; }
+        public virtual DbSet<Artist> Artists { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Mall> Malls { get; set; }
     }
 }

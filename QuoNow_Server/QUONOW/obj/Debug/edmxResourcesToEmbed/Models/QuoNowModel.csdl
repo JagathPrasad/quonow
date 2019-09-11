@@ -494,5 +494,63 @@
       <End Role="UserType" EntitySet="UserTypes" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
+    <EntitySet Name="Artists" EntityType="QUONOWModel.Artist" />
+    <EntitySet Name="Locations" EntityType="QUONOWModel.Location" />
+    <EntitySet Name="Malls" EntityType="QUONOWModel.Mall" />
   </EntityContainer>
+  <EntityType Name="Artist">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Skill" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ImageUrl" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="VendorId" Type="Guid" />
+    <Property Name="IsProduct" Type="Boolean" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsValidated" Type="Boolean" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ArtistId" Type="Guid" />
+    <Property Name="IsNew" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Area" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="LandMark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ImageUrl" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="VendorId" Type="Guid" />
+    <Property Name="IsProduct" Type="Boolean" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsValidated" Type="Boolean" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ArtistId" Type="Guid" />
+    <Property Name="IsNew" Type="Boolean" />
+  </EntityType>
 </Schema>

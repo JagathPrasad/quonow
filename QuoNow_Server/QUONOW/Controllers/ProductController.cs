@@ -157,6 +157,29 @@ namespace QUONOW.Controllers
 
         }
 
+
+        [Route("GetLocations")]
+        public IHttpActionResult GetLocations()
+        {
+            try
+            {
+                var locations = this.db.Locations.Select(x => new
+                {
+                    area = x.Area,
+                    landmark = x.LandMark,
+                    id = x.Id
+                }).ToList();
+                return Ok(locations);
+
+            }
+            catch (Exception ex)
+            {
+
+                return InternalServerError(ex);
+            }
+
+
+        }
     }
 
 
